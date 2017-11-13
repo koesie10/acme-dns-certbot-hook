@@ -50,6 +50,10 @@ func main() {
 		domainCfg.AcmeDNSURL = config.AcmeDNSURL
 	}
 
+	if domainCfg.AcmeDNSURL == "" {
+		log.Fatalf("missing acme_dns_url for domain %s", domain)
+	}
+
 	requestUrl, err := resolveURL(domainCfg.AcmeDNSURL, "update")
 	if err != nil {
 		log.Fatal(err)
