@@ -7,17 +7,17 @@ import (
 
 type config struct {
 	AcmeDNSURL          string            `json:"acme_dns_url"`
-	PropagationDuration duration     `json:"propagation_duration"`
+	PropagationDuration duration          `json:"propagation_duration"`
 	Domains             map[string]domain `json:"domains"`
 }
 
 type domain struct {
-	Username            string        `json:"username"`
-	Password            string        `json:"password"`
-	FullDomain          string        `json:"fulldomain"`
-	Subdomain           string        `json:"subdomain"`
-	AllowFrom           []string      `json:"allowfrom"`
-	AcmeDNSURL          string        `json:"acme_dns_url"`
+	Username            string   `json:"username"`
+	Password            string   `json:"password"`
+	FullDomain          string   `json:"fulldomain"`
+	Subdomain           string   `json:"subdomain"`
+	AllowFrom           []string `json:"allowfrom"`
+	AcmeDNSURL          string   `json:"acme_dns_url"`
 	PropagationDuration duration `json:"propagation_duration"`
 }
 
@@ -47,4 +47,3 @@ func (d *duration) UnmarshalJSON(data []byte) error {
 
 	return nil
 }
-
