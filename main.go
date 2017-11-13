@@ -54,7 +54,7 @@ func main() {
 		log.Fatalf("missing acme_dns_url for domain %s", domain)
 	}
 
-	requestUrl, err := resolveURL(domainCfg.AcmeDNSURL, "update")
+	requestURL, err := resolveURL(domainCfg.AcmeDNSURL, "update")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -69,7 +69,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	req, err := http.NewRequest(http.MethodPost, requestUrl.String(), bytes.NewBuffer(data))
+	req, err := http.NewRequest(http.MethodPost, requestURL.String(), bytes.NewBuffer(data))
 	if err != nil {
 		log.Fatal(err)
 	}
