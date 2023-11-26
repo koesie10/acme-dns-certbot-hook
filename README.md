@@ -7,7 +7,7 @@ A [Certbot](https://certbot.eff.org/) hook for [acme-dns](https://github.com/joo
 ## Install
 
 ```bash
-go get github.com/koesie10/acme-dns-certbot-hook
+go install github.com/koesie10/acme-dns-certbot-hook@latest
 ```
 
 ## Usage
